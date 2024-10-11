@@ -21,6 +21,11 @@ inputs:
     description: 'Run octodns-sync in force mode?'
     required: false
     default: 'No'
+  zones:
+    description: 'Space separated list of zones to sync, leave empty to sync
+                  all zones in the config file'
+    required: false
+    default: ''
   pr_comment_token:
     description: 'Provide a token to use, if you set add_pr_comment to Yes.'
     required: true
@@ -42,6 +47,7 @@ runs:
         CONFIG_PATH: ${{ inputs.config_path }}
         DOIT: ${{ inputs.doit }}
         FORCE: ${{ inputs.force }}
+        ZONES: ${{ inputs.zones }}
       run: ${{ github.action_path }}/scripts/run.sh
       shell: bash
       working-directory: ${{ github.workspace }}
