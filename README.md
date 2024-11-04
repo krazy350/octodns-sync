@@ -93,6 +93,12 @@ Provide a token to use, if you set `add_pr_comment` to "Yes".
 
 Default `"Not set"`.
 
+### `zones`
+
+Space separated list of zones to sync, leave empty to sync all zones in the config file.
+
+Default: `""` (empty string)
+
 ## Outputs
 
 ### plan
