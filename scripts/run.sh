@@ -33,7 +33,7 @@ else
   _force=
 fi
 
-if ! octodns-sync --config-file="${_config_path}" ${_doit} ${_force} ${_zones} \
+if ! octodns-sync --logging-config logging.yaml --config-file="${_config_path}" ${_doit} ${_force} ${_zones} \
 1>"${_planfile}" 2>"${_logfile}"; then
   echo "FAIL: octodns-sync exited with an error."
   echo "FAIL: Here are the contents of ${_logfile}:"
