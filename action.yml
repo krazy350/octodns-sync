@@ -30,6 +30,10 @@ inputs:
     description: 'Provide a token to use, if you set add_pr_comment to Yes.'
     required: true
     default: 'Not set'
+  pr_custom_header:
+    description: 'Provide a custom header to use'
+    required: false
+    default: '## KOKO octoDNS Plan for ${_sha}'
 outputs:
   log:
     description: '`octodns-sync` command output'
@@ -56,6 +60,7 @@ runs:
       env:
         ADD_PR_COMMENT: ${{ inputs.add_pr_comment }}
         PR_COMMENT_TOKEN: ${{ inputs.pr_comment_token }}
+        PR_CUSTOM_HEADER: ${{ inputs.pr_custom_header }}
         COMMENTS_URL: ${{ github.event.pull_request.comments_url }}
       run: ${{ github.action_path }}/scripts/comment.sh
       shell: bash
