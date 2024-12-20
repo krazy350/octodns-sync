@@ -26,6 +26,8 @@ if [ -z "${COMMENTS_URL}" ]; then
   exit 0
 fi
 
+echo "Custom header je: \' ${PR_CUSTOM_HEADER} \'"
+
 # Construct the comment body
 _sha="$(git log -1 --format='%h')"
 _header="${PR_CUSTOM_HEADER}"
