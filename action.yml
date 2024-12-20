@@ -24,7 +24,7 @@ inputs:
   header:
     description: 'Provide a custom header to use in pr comment'
     required: true
-    default: '## octoDNS Plan for ${( github.sha }}'
+    default: '## octoDNS Plan for ${{ github.sha }}'
   zones:
     description: 'Space separated list of zones to sync, leave empty to sync
                   all zones in the config file'
