@@ -79,6 +79,12 @@ Run octodns-sync in force mode? Set "Yes" to do it.
 
 Default `"No"`.
 
+### `header`
+
+Provide a custom header in pr comment.
+
+Default `"## octoDNS Plan for sha commit"`.
+
 ### `add_pr_comment`
 
 Add plan as a comment, when triggered by a pull request? Set "Yes" to do it.
