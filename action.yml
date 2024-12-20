@@ -33,7 +33,6 @@ inputs:
   pr_custom_header:
     description: 'Provide a custom header to use'
     required: false
-    default: '## KOKO octoDNS Plan for ${_sha}'
 outputs:
   log:
     description: '`octodns-sync` command output'
