@@ -21,6 +21,10 @@ inputs:
     description: 'Run octodns-sync in force mode?'
     required: false
     default: 'No'
+  header:
+    description: 'Provide a custom header to use in pr comment'
+    required: true
+    default: '## octoDNS Plan for ${{ github.sha }}'
   zones:
     description: 'Space separated list of zones to sync, leave empty to sync
                   all zones in the config file'
@@ -55,6 +59,7 @@ runs:
       id: comment
       env:
         ADD_PR_COMMENT: ${{ inputs.add_pr_comment }}
+        HEADER: ${{ inputs.header }}
         PR_COMMENT_TOKEN: ${{ inputs.pr_comment_token }}
         COMMENTS_URL: ${{ github.event.pull_request.comments_url }}
       run: ${{ github.action_path }}/scripts/comment.sh
